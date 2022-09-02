@@ -30,14 +30,14 @@ use pocketmine\plugin\PluginBase;
 use function count;
 
 class Main extends PluginBase implements Listener {
-    public function onQuery(QueryRegenerateEvent $ev) : void { 
-        // thanks for zeqa to sharing this code.
-		$online = count($this->getServer()->getOnlinePlayers());
-		$ev->getQueryInfo()->setPlayerCount($online);
-		$ev->getQueryInfo()->setMaxPlayerCount($online + 1);
+
+	protected function onEnable(): void {
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
-	
-	public function onEnable() :void {
-	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+
+	public function onQuery(QueryRegenerateEvent $event): void {
+		// Thanks for zeqa to sharing this code.
+		$playersCount = count($this->getServer()->getOnlinePlayers());
+		$event->getQueryInfo()->setMaxPlayerCount(++$playersCount);
 	}
 }
