@@ -1,7 +1,7 @@
 ---
 name: FancyPlayerCount
-version: 1.0.0
-api: 4.0.0
+version: 2.0.0
+api: 5.0.0
 main: ReinfyTeam\FancyPlayerCount\Main
 src-namespace-prefix: ReinfyTeam\FancyPlayerCount
 description: Fancy Player Count Inspired by Zeqa Network
