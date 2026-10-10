@@ -16,6 +16,9 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Set up PHP environment
         uses: pmmp/setup-php-action@3c38c259834f945351a662392836d90eb08abff0
+        with:
+          php-version: 8.2
+          pm-version-major: 5
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction
       - name: Run PHPStan at maximum level
