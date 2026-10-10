@@ -1,0 +1,19 @@
+name: Build and validate plugin
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: NhanAZ/DevTools/.github/workflows/build-plugin.yml@6606444fc32787a3e50275fdb668c2310e899740
+    with:
+      php-version: '8.2'
+      prepare-dependencies: true
+      retention-days: 14
