@@ -12,8 +12,11 @@ permissions:
 
 jobs:
   build:
-    uses: NhanAZ/DevTools/.github/workflows/build-plugin.yml@85f0ee8363e7e2609e7b88f1fdac186927435371
+    uses: NhanAZ/DevTools/.github/workflows/build-plugin.yml@6180fb4a04e5981ccb24128823970de3e8fd3830
     with:
+      axolotl-ref: dfe0d07e48a9e8d5a4a242fa43ff1cd3b743a955
       php-version: '8.2'
+      pm-version-major: '5'
       prepare-dependencies: true
+      phpstan: max
       retention-days: 14
