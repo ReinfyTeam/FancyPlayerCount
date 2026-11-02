@@ -20,6 +20,6 @@ jobs:
           php-version: 8.2
           pm-version-major: 5
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction
+        run: composer install --prefer-dist --no-interaction --ignore-platform-req=ext-webrtc
       - name: Run PHPStan at maximum level
         run: composer analyse
